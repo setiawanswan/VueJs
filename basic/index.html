@@ -14,6 +14,7 @@
         <p>{{ array[0] }}</p>
         <p>{{ obj.car }}</p>
         <p>{{ func() }}</p>
+        <p>{{ welcome() }}</p>
     </div>
 </body>
 <script>
@@ -28,6 +29,11 @@
             },
             func:()=>{
                 return 'Message from function'
+            }
+        },
+        methods:{
+            welcome(){
+                return this.greeting
             }
         }
     })

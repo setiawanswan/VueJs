@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.js"></script>
+    <title>Directive Vue Js</title>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src="src" v-bind:alt="alt">
+        <hr>
+        <a v-bind:href="link">Go to Lorem Picsum</a>
+        <hr>
+        <p v-text="myText"></p>
+        <hr>
+        <div v-html="myHtml"></div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            src: 'https://picsum.photos/id/237/200/300',
+            alt: 'Lorem Picsum',
+            link: 'https://picsum.photos/',
+            myText: 'I learn Directive VueJs',
+            myHtml: '<strong>My name is Setiawan</strong>'
+        }
+    })
+</script>
+</html>
