@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.js"></script>
+    <title>Argument Vue Js</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ name }}</h1>
+        <button v-on:click="changeName('Greg',$event)">
+            Click Me !
+        </button>
+
+        <hr>
+
+        <form v-on:click="handleForm">
+            <input />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            name:'Francis'
+        },
+        methods:{
+            changeName(newName,event){
+               return this.name = newName;
+               console.log(event)
+            },
+            handleForm(event){
+                event.preventDefault();
+                console.log('Submit Form')
+            }
+        }
+    })
+</script>
+</html>

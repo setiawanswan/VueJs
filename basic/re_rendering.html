@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.js"></script>
+    <title>Re-Rendering</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ name }}</h1>
+        <h1 v-once>{{ name }}</h1>
+        {{ upadate() }}
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            name:'Francis'
+        },
+        methods:{
+            upadate(){
+                setTimeout(() => {
+                    this.name = 'Steve'
+                },2000)
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.js"></script>
+    <title>Loop Vue Js</title>
+</head>
+<body>
+    <div id="app">
+        <p v-for="(name,index) in names">
+          {{ index }} / {{ name }}
+        </p>
+        <ul>
+            <li v-for="(car,index) in cars">
+                {{ index }} / {{ car.brand }} / {{ car.color }}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(value,key,index) in user">
+              {{ index }} - {{ key }} : {{ value }}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            user: {
+                name: 'Francis',
+                lastname: 'Greg',
+                age: '23'
+            },
+            names:['Francis', 'Jane', 'Steve', 'David'],
+            cars:[
+                {
+                    brand:'Toyota',
+                    color:'Red'
+                },
+                {
+                    brand:'Nissan',
+                    color:'Green'
+                },
+                {
+                    brand:'Chevrolet',
+                    color:'Blue'
+                }
+            ]
+        }
+    })
+</script>
+</html>
