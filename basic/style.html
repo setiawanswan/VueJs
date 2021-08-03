@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/vue.js"></script>
+    <title>Style</title>
+</head>
+<body>
+    <div id="app">
+        <div
+            class="element"
+            v-bind:class="[
+                colors.redClass.active ? colors.redClass.name : '' 
+            ]"
+            v-on:click="
+                colors.redClass.active = !colors.redClass.active,
+                newStyles.fontSize = '50px'
+            "
+            v-bind:style="newStyles"
+        >
+            This is my content !!
+        </div>
+        <hr>
+        <div
+            class="element"
+            v-bind:class="colorStyle"
+            v-on:click="colorStyle = 'green'"
+        >
+            Click Me !
+        </div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            colorStyle:'blue',
+            colors:{
+                redClass:{
+                    name:'red',
+                    active:true
+                }
+            },
+            newStyles:{
+                fontSize:'20px',
+                border:'1px solid gray'
+            }
+        }
+    })
+</script>
+<style>
+    .element{
+        color: white;
+        background-color: black;
+        padding: 10px;
+    }
+    .red{
+        background-color: red;
+    }
+    .blue{
+        background-color: blue;
+    }
+    .green{
+        background-color: green;
+    }
+</style>
+</html>
