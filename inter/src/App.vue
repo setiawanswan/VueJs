@@ -1,23 +1,24 @@
 <template>
     <div>
         <app-header></app-header>
-        <!-- <div class="container">
-            {{ name }}
-         </div> -->
-         <Profile 
-            :userName="name"
-            :userLastname="lastname"
-            :userAge="age"
-            :userParents="parents"
-            @updateName="name = $event"
-            :updateLastname="updateLastname"
-         />
+        <div class="container">
+            <Profile 
+                :userName="name"
+                :userLastname="lastname"
+                :userAge="age"
+                :userParents="parents"
+                @updateName="name = $event"
+                :updateLastname="updateLastname"
+            />
+            <Friends />
+        </div>
         <Footer />
     </div>
 </template>
 <script>
 import Footer from './Components/Footer/Footer.vue';
 import Profile from './Components/User/Profile.vue';
+import Friends from './Components/User/Friends.vue';
 
     export default {
         data(){
@@ -38,7 +39,8 @@ import Profile from './Components/User/Profile.vue';
         },
         components:{
             Footer,
-            Profile
+            Profile,
+            Friends
         }
     }
 
