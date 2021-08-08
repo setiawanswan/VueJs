@@ -22,6 +22,7 @@
             </ul>
         </div>
         <button @click="updateName">Update Name</button>
+        <button @click="updateLastname('Smith')">Update Last Name</button>
     </div>
 </template>
 
@@ -31,11 +32,13 @@
             userName: String,
             userLastname: String,
             userAge: Number,
-            userParents: Object
+            userParents: Object,
+            updateLastname: Function
         },
          methods:{
             updateName(){
-                this.name = 'Francis Greg'
+                // this.userName = 'Francis Greg'
+                this.$emit('updateName', 'Francis Greg')
             }
         }  
     }

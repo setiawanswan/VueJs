@@ -9,6 +9,8 @@
             :userLastname="lastname"
             :userAge="age"
             :userParents="parents"
+            @updateName="name = $event"
+            :updateLastname="updateLastname"
          />
         <Footer />
     </div>
@@ -27,6 +29,11 @@ import Profile from './Components/User/Profile.vue';
                     mother:'Martha',
                     father:'Mario'
                 }
+            }
+        },
+        methods:{
+            updateLastname(value){
+                this.lastname = value
             }
         },
         components:{
