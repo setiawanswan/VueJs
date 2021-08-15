@@ -11,6 +11,22 @@
                 :updateLastname="updateLastname"
             />
             <Friends />
+            <Habilities>
+                <ul slot="main_hab">
+                    <li v-for="(hab, index) in habilities" :key="index">
+                        {{ hab }}
+                    </li>
+                </ul>
+                <div slot="notes">
+                    <p>The user also know PHP</p>
+                </div>
+                <div>
+                    <a href="#">See more about this user</a>
+                </div>
+                <div :slot="slotName">
+                    Other content
+                </div>
+            </Habilities>
         </div>
         <Footer />
     </div>
@@ -19,6 +35,7 @@
 import Footer from './Components/Footer/Footer.vue';
 import Profile from './Components/User/Profile.vue';
 import Friends from './Components/User/Friends.vue';
+import Habilities from './Components/User/Habilities.vue';
 
     export default {
         data(){
@@ -29,7 +46,9 @@ import Friends from './Components/User/Friends.vue';
                 parents:{
                     mother:'Martha',
                     father:'Mario'
-                }
+                },
+                habilities: ['JS', 'CSS', 'HTML'],
+                slotName:''
             }
         },
         methods:{
@@ -37,15 +56,21 @@ import Friends from './Components/User/Friends.vue';
                 this.lastname = value
             }
         },
+        created() {
+            setTimeout(() => {
+                this.slotName = 'other'
+            },3000)
+        },
         components:{
             Footer,
             Profile,
-            Friends
+            Friends,
+            Habilities
         }
     }
 
 </script>
-<style>
+<style scoped>
     body {
         padding: 0;
         margin: 0;
