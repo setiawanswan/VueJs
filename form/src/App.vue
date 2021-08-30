@@ -51,6 +51,43 @@
               </textarea>
             </div>
 
+            <div class="form-group">
+              <label for="newsletter">Newsletter</label>
+              <input 
+                type="checkbox"
+                id="newsletter"
+                value="Newsletter"
+                v-model="formdata.extras"
+              >
+              <label for="promotions">Promotion</label>
+              <input 
+                type="checkbox"
+                id="promotions"
+                value="Promotion"
+                v-model="formdata.extras"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="human">
+                <input 
+                  type="radio"  
+                  id="human"
+                  value="human"
+                  v-model="formdata.gender"
+                > Human
+              </label>
+              <label for="alien">
+                <input 
+                  type="radio"  
+                  id="alien"
+                  value="alien"
+                  v-model="formdata.gender"
+                > Alien
+              </label>
+              {{ formdata.gender }}
+            </div>
+
             <button
               class="btn btn-primary"
               @click.prevent="submitForm"
@@ -80,7 +117,10 @@ export default {
         name:'',
         lastname:'', 
         subject:'',
-        message:'Some default content'
+        message:'Some default content',
+        extras:[],
+        gender:'alien'
+
       }
     }
   },
