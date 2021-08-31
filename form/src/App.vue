@@ -8,7 +8,9 @@
         <button @click="compToRender = 'Contact'">Contact</button>
       </div>
       <div>
-        <component :is="compToRender"></component>
+        <keep-alive>
+          <component :is="compToRender"></component>
+        </keep-alive>
       </div>
     </div>
     <app-footer/>
