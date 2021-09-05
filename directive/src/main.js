@@ -26,11 +26,34 @@ Vue.directive('awesome', {
       el.style.color = binding.modifiers.red ? 'red' : 'blue'
       el.style.fontSize = binding.modifiers.small ? '12px' : '30px'
 
-      console.log(binding)
+      // console.log(binding)
+      console.log(el.parentNode)
       
       binding
       
       vnode
+  },
+  inserted(el,binding,vnode){
+    console.log(el.parentNode)
+
+    binding
+    vnode
+  },
+  update(el,binding,vnode,oldVnode){
+    console.log('update')
+    el
+    binding
+    vnode
+    oldVnode
+  },
+  componentUpdated(){
+    console.log('update too')
+  },
+  unbind(el,binding,vnode){
+    console.log('unbind')
+    el
+    binding
+    vnode
   }
 })
 
