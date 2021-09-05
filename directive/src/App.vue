@@ -2,7 +2,8 @@
   <div>
     <app-header/>
     <div class="container">
-      <div v-awesome="'Text as a value'"></div>
+      <div v-awesome.red.big="textToRender"></div>
+      <div v-awesome.blue.small="textToRender"></div>
     </div>
     <app-footer/>
   </div>
@@ -11,7 +12,11 @@
 <script>
 
 export default {
-  name: 'App'
+  data() {
+    return {
+      textToRender:'Text value'
+    }
+  }
 }
 </script>
 
