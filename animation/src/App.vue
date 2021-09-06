@@ -3,15 +3,28 @@
     <app-header/>
     <div class="container">
 
-      <transition name="slideup">
-        <div class="p-3 mb-2 bg-success text-white" v-if="display">Hello</div>
+      <!-- <transition name="slideup">
+        <div class="p-3 mb-2 bg-success text-white" v-if="display">Hello2</div>
       </transition>
 
       <transition name="appear">
         <div class="p-3 mb-2 bg-success text-white" v-if="display">Hello</div>
       </transition>
 
-      <button class="btn btn-primary" @click="display = !display">Toggle anim</button>
+      <button class="btn btn-primary" @click="display = !display">Toggle anim</button> -->
+
+      <hr>
+
+      <button class="btn btn-primary" @click="status = !status">Toggle Status</button>
+
+      <transition name="appear" mode="out-in">
+        <div class="p-3 mb-2 bg-success text-white" v-if="!status" key="status_down">Status is False</div>
+        <div class="p-3 mb-2 bg-success text-white" v-else key="status_up">Status is True</div>
+      </transition>
+
+      <!-- <transition name="appear">
+        <div class="p-3 mb-2 bg-success text-white" v-if="status">Status is True</div>
+      </transition> -->
 
     </div>
     <app-footer/>
@@ -23,7 +36,8 @@
 export default {
   data() {
     return {
-      display: false
+      display: false,
+      status: false
     }
   }
 }
