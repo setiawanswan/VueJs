@@ -3,6 +3,8 @@
     <app-header/>
     <div class="container">
 
+      
+
     </div>
     <app-footer/>
   </div>
@@ -11,7 +13,11 @@
 <script>
 
 export default {
-  name: 'App'
+  data() {
+    return {
+      display: false
+    }
+  }
 }
 </script>
 
