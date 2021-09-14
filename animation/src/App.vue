@@ -13,18 +13,28 @@
 
       <button class="btn btn-primary" @click="display = !display">Toggle anim</button> -->
 
-      <hr>
+      <!-- <hr>
 
       <button class="btn btn-primary" @click="status = !status">Toggle Status</button>
 
       <transition name="appear" mode="out-in">
         <div class="p-3 mb-2 bg-success text-white" v-if="!status" key="status_down">Status is False</div>
         <div class="p-3 mb-2 bg-success text-white" v-else key="status_up">Status is True</div>
-      </transition>
+      </transition> -->
 
       <!-- <transition name="appear">
         <div class="p-3 mb-2 bg-success text-white" v-if="status">Status is True</div>
       </transition> -->
+
+      <button class="btn btn-primary" @click="custom = !custom">CUSTOM</button>
+
+      <transition 
+        name="awesome"
+        enter-active-class="animate__animated animate__bounce"
+        leave-active-class="animate__animated animate__bounce"
+      >
+        <div class="p-3 mb-2 bg-success text-white" v-if="custom">Hello</div>
+      </transition>
 
     </div>
     <app-footer/>
@@ -37,13 +47,27 @@ export default {
   data() {
     return {
       display: false,
-      status: false
+      status: false,
+      custom: true
     }
   }
 }
 </script>
 
 <style>
+
+.awesome-enter {
+  opacity: 0;
+}
+
+.awesomeEnter {
+  transition: all 5s ease;
+}
+
+.awesomeLeave {
+  transition: all 5s ease;
+  opacity: 0;
+}
 
 /* state */
 
